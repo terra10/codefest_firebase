@@ -2,7 +2,7 @@
 
 Codefest for Google Firebase
 
-bannerlink
+![alt text](https://github.com/terra10/codefest_firebase/raw/master/assets/banner.jpeg "Codefest")
 
 Installations / Prep:
 - Google account
@@ -18,7 +18,7 @@ Set up a simple Angular web application with Google Firebase.
 - Hosting
 
 ## Index
-
+- [01-Setup](01-Setup)
 
 
 
