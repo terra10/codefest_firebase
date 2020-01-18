@@ -1,4 +1,6 @@
 <h2>{{title}}</h2>
+<input #searchInput>
+<button (click)="search(searchInput.value)">SEARCH</button>
 <ul>
   <li *ngFor="let item of items | async">
     {{item.ip_address}} ---

@@ -21,7 +21,11 @@ export class AppComponent {
 
   items: Observable<MockItem[]>;
 
-  constructor(db: AngularFirestore) {
+  constructor(private readonly db: AngularFirestore) {
     this.items = db.collection<MockItem>('items').valueChanges();
+  }
+
+  search(searchValue: string): void {
+    this.items = this.db.collection<MockItem>('items', (ref) => ref.where('first_name', '==', searchValue)).valueChanges();
   }
 }
