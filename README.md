@@ -19,6 +19,7 @@ Set up a simple Angular web application with Google Firebase.
 
 ## Index
 - [01-Setup](01-Setup)
+- [02-Firestore](02-Firestore)
 
 
 
