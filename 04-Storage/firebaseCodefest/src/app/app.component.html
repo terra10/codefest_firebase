@@ -7,6 +7,9 @@
     <div>{{ uploadPercent | async }}</div>
     <a [href]="downloadURL | async">{{ downloadURL | async }}</a>
   </div>
+  <ul>
+    <li *ngFor="let file of files"> {{file}}</li>
+  </ul>
   <div>
     <input #searchInput>
     <button (click)="search(searchInput.value)">SEARCH</button>

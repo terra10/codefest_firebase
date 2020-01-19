@@ -25,9 +25,11 @@ export class AppComponent {
   uploadPercent: Observable<number>;
   downloadURL: Observable<string>;
   items: Observable<MockItem[]>;
+  files: string[]
 
   constructor(private readonly db: AngularFirestore, public fireAuth: AngularFireAuth, private storage: AngularFireStorage) {
     this.items = db.collection<MockItem>('items').valueChanges();
+    this.storage.storage.ref('/').listAll().then(res => this.files = res.items.map(file => file.fullPath))
   }
 
   search(searchValue: string): void {

@@ -75,4 +75,29 @@ Official documentation: https://firebase.google.com/docs/storage
     ```
 - Try it out, and check out the Firebase console as well to see your files in the storage section.
 
-## 02 List of files to download
+## 02 Simple List of files
+
+- Add an extra property to the class for the files
+  ``` ts
+    class AppComponent {
+        files: string[]
+    }
+  ```
+- To show a list of the files in a storage reference we simply need to call the listAll() function.
+  We can add the call to the constructor so it fires when initialized
+  ``` ts
+  this.storage.storage.ref('/').listAll()
+    .then(res => this.files = res.items.map(file => file.fullPath));
+  ```
+- And a very simple html template
+  ``` html
+    <ul>
+        <li *ngFor="let file of files"> {{file}}</li>
+    </ul>
+  ```
+
+## 03 Explore!
+Go to the [docs](https://firebase.google.com/docs/storage) and explore more of the features.
+  Some suggestions: 
+- [Use File Metadata](https://firebase.google.com/docs/storage/web/file-metadata)
+- [Delete Files](https://firebase.google.com/docs/storage/web/delete-files)
