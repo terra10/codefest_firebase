@@ -1,0 +1,37 @@
+<h2>{{title}}</h2>
+<div *ngIf="fireAuth.user | async as user; else showLogin">
+  <h1>Hello {{ user.displayName || user.email }}!</h1>
+  <button (click)="logout()">Logout</button>
+  <div>
+    <input type="file" (change)="uploadFile($event)" />
+    <div>{{ uploadPercent | async }}</div>
+    <a [href]="downloadURL | async">{{ downloadURL | async }}</a>
+  </div>
+  <div>
+    <input #searchInput>
+    <button (click)="search(searchInput.value)">SEARCH</button>
+    <ul>
+      <li *ngFor="let item of items | async">
+        {{ item.ip_address }} ---
+        {{ item.first_name }}
+        {{ item.last_name }}
+      </li>
+    </ul>
+  </div>
+</div>
+<ng-template #showLogin>
+  <p>Please login, or sign up!</p>
+  <button (click)="loginWithGoogle()">Login with Google</button>
+  <div>
+    <input #email placeholder="email">
+    <input #pw placeholder="password" type="password">
+    <button (click)="login(email.value, pw.value)">Login with email/password</button>
+  </div>
+  <br>
+  <div>
+    <input #signUpEmail placeholder="email">
+    <input #signUpPw placeholder="password" type="password">
+    <button (click)="signUp(signUpEmail.value, signUpPw.value)">Sign me up!</button>
+  </div>
+  <br>
+</ng-template>

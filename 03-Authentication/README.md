@@ -118,8 +118,18 @@ Official documentation: https://firebase.google.com/docs/auth
         <!-- move the database items so we only see them when logged in -->
     </div>
   ```
+## 03 Making sure only authenticated users can see our data
+- Now that we have some form of authentication, we can update the rules in our fireStore as well.
+- Navigate to the firebase console, database section
+- Go to rules and switch it to
+  ```
+    match /{document=**} {
+      allow read, write: if request.auth.uid != null;
+    }
+  ```
+- Now only authenticated users can see the data :) try it out!
 
-## 02 Explore!
+## 04 Explore!
 Go to the [docs](https://firebase.google.com/docs/auth) and explore more of the features.
   Some suggestions: 
 - [Login with Microsoft Azure AD](https://firebase.google.com/docs/auth/web/microsoft-oauth)

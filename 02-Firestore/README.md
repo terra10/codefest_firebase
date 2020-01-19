@@ -4,6 +4,8 @@ Official documentation: https://firebase.google.com/docs/firestore
 
 ## 01 Simple live data 
 
+- Navigate to the firebase console, database section. And lets setup FireStore.
+  - When prompted for security rules, set it open access for development. Obviously this will change later.
 - Add some data to your database. You can do this by hand and make your own or use the premade mock data [here](../utils)
 - Use the imported firestore modules set up in [01-Setup](../01-Setup)
   - In app.component.ts add the required imports to the top of the file
