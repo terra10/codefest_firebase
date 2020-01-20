@@ -19,7 +19,7 @@ Official documentation: https://firebase.google.com/docs/firestore
       ```
   - Add a constructor to the class to finish the component for now.
       ``` ts
-      constructor(db: AngularFirestore) {
+      constructor(private db: AngularFirestore) {
          this.items = db.collection<any>('items').valueChanges();
       }
       ```
