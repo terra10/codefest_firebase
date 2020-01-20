@@ -34,7 +34,8 @@ Official documentation: https://firebase.google.com/docs/firestore
         </li>
       </ul>
       ```
-- Enjoy instant updates from your database :)
+- Run "npm start" from the terminal to start the app
+- Enjoy instant updates from your database :) (try to change or remove some data using the console and see what happens...)
 
 ## 02 Query
 
